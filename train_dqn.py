@@ -4,9 +4,9 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 if __name__ == '__main__':
-    env = gym.make('LunarLander-v2')
-    agent = Agent(gamma=0.99, epsilon=1.0, batch_size=64, n_actions=4, eps_end=0.01,
-                  input_dims=[8], lr=0.001, max_mem_size=50000)
+    env = gym.make('Pendulum-v1')
+    agent = Agent(gamma=0.99, epsilon=1.0, batch_size=64, n_actions=env.action_space.n, eps_end=0.01,
+                  input_dims=env.observation_space.shape, lr=0.001, max_mem_size=50000)
     scores, eps_history = [], []
     n_games = 500
     moving_avgs = []
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         moving_avg = np.mean(scores[-5:])
         moving_avgs.append(moving_avg)
         plt.plot(np.arange(len(moving_avgs)), moving_avgs)
-        plt.savefig('./plots/dqn_lunar.pdf')
+        plt.savefig('./plots/dqn_Pendulum.pdf')
 
         print('episode ', i, 'score %.2f' % score,
                 'average score %.2f' % avg_score,

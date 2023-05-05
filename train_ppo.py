@@ -4,9 +4,10 @@ from actor_critic.ppo_torch import Agent
 from matplotlib import pyplot as plt
 
 if __name__ == '__main__':
-    env = gym.make('LunarLander-v2')
+    # lunar lander, cart pole
+    env = gym.make('Pendulum-v1')
     N = 20
-    batch_size = 5
+    batch_size = 128
     n_epochs = 4
     alpha = 0.001
     agent = Agent(n_actions=env.action_space.n, batch_size=batch_size, 
@@ -43,7 +44,7 @@ if __name__ == '__main__':
         moving_avg = np.mean(score_history[-5:])
         moving_avgs.append(moving_avg)
         plt.plot(np.arange(len(moving_avgs)), moving_avgs)
-        plt.savefig('./plots/ppo_lunar.pdf')
+        plt.savefig('./plots/ppo_Pendulum.pdf')
 
         if avg_score > best_score:
             best_score = avg_score

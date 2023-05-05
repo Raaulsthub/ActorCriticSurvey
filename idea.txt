@@ -16,7 +16,7 @@ ENVIRONMENTS
         Acrobot
         CartPole
         MountainCar
-        Pendulum
+        LunarLander
 
 
 Name: Enhancing Performance in 2D Games with Soft Actor-Critic Reinforcement Learning
