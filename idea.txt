@@ -1,0 +1,24 @@
+NEURAL NETWORKS TO BE COMPARED
+
+    NON ACTOR CRITIC METHODS
+        DQN
+        DDQN
+        DDDQN
+
+    ACTOR CRITIC METHODS
+        A3C
+        TRPO
+        PPO
+
+ENVIRONMENTS
+
+    DISCRETE
+        Acrobot
+        CartPole
+        MountainCar
+        Pendulum
+
+
+Name: Enhancing Performance in 2D Games with Soft Actor-Critic Reinforcement Learning
+      Exploring the Power of Soft Actor-Critic for Discrete Action Spaces in 2D Gaming Environments
+      Diving into Soft Actor-Critic Methods for Improving Performance in 2D Gaming Environments.
