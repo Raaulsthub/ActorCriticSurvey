@@ -3,11 +3,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import numpy as np
+import os
 
 
 class DeepQNetwork(nn.Module):
     def __init__(self, lr, input_dims, fc1_dims, fc2_dims,
-                 n_actions):
+                 n_actions, chkpt_dir='./tmp/dqn'):
+        self.checkpoint_file = os.path.join(chkpt_dir, 'q_eval')
         super(DeepQNetwork, self).__init__()
         self.input_dims = input_dims
         self.fc1_dims = fc1_dims
@@ -28,6 +30,12 @@ class DeepQNetwork(nn.Module):
         actions = self.fc3(x)
 
         return actions
+    
+    def save_checkpoint(self):
+        T.save(self.state_dict(), self.checkpoint_file)
+
+    def load_checkpoint(self):
+        self.load_state_dict(T.load(self.checkpoint_file))
 
 
 class Agent:
