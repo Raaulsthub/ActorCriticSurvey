@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv('./training_log/dqn/lunar_lander.csv')
+df = pd.read_csv('./training_log/dqn/cart_pole.csv')
 
 # Create a figure and axis objects
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -24,4 +24,4 @@ ax.set_ylabel('Average Reward')
 ax.legend()
 
 # Save the plot as a PDF file
-plt.savefig('./training_plots/dqn_LunarLander.pdf', format='pdf')
+plt.savefig('./training_plots/dqn_CartPole.pdf', format='pdf')
