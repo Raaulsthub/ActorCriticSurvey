@@ -34,7 +34,7 @@ if __name__ == '__main__':
         plt.plot(np.arange(len(moving_avgs)), moving_avgs)
         plt.savefig('./plots/dqn_LunarLanderV2.pdf')
 
-        if avg_score > best_score:
+        if avg_score >= best_score:
             best_score = avg_score
             agent.save_models()
 
