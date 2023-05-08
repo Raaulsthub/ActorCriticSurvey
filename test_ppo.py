@@ -19,7 +19,7 @@ if __name__ == '__main__':
     
     agent.load_models()
 
-    n_games = 1000
+    n_games = 10
 
     scores = []
     
@@ -35,8 +35,6 @@ if __name__ == '__main__':
             observation = observation_
             env.render()
         scores.append(score)
-        plt.plot(np.arange(len(scores)), score)
-        plt.savefig('./plots/ppo_LunarLanderV2Test.pdf')
 
 
     data = {'episode': np.arange(len(scores)), 'avg_reward': score}

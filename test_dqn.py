@@ -24,8 +24,6 @@ if __name__ == '__main__':
             env.render()
         scores.append(score)
 
-        plt.plot(np.arange(len(scores)), scores)
-        plt.savefig('./plots/dqn_LunarLanderV2Test.pdf')
 
 
 
