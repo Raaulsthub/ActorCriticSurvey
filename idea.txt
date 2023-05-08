@@ -3,10 +3,8 @@ NEURAL NETWORKS TO BE COMPARED
     NON ACTOR CRITIC METHODS
         DQN
         DDQN
-        DDDQN
 
     ACTOR CRITIC METHODS
-        A3C
         TRPO
         PPO
 
@@ -19,6 +17,6 @@ ENVIRONMENTS
         LunarLander
 
 
-Name: Enhancing Performance in 2D Games with Soft Actor-Critic Reinforcement Learning
-      Exploring the Power of Soft Actor-Critic for Discrete Action Spaces in 2D Gaming Environments
-      Diving into Soft Actor-Critic Methods for Improving Performance in 2D Gaming Environments.
+Name:   Beyond Programming: Achieving Human-like AI Behavior in 2D Games
+        Policy Optimization for Realistic AI Behavior in 2D Games
+        Bridging the Gap: Creating Human-like Behavior in 2D Game AI using Policy Optimization
