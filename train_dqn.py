@@ -43,6 +43,6 @@ if __name__ == '__main__':
                 'average score %.2f' % avg_score,
                 'epsilon %.2f' % agent.epsilon)
 
-    data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
-    df = pd.DataFrame(data)
-    df.to_csv('./training_log/dqn/lunar_lander.csv', index=False)
+    # data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
+    # df = pd.DataFrame(data)
+    # df.to_csv('./training_log/dqn/lunar_lander.csv', index=False)

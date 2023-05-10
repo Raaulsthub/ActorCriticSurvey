@@ -56,7 +56,7 @@ if __name__ == '__main__':
         print('episode', i, 'score %.1f' % score, 'avg score %.1f' % avg_score,
                 'time_steps', n_steps, 'learning_steps', learn_iters)
 
-    data = {'episode': np.arange(len(score_history)), 'avg_reward': score_history}
-    df = pd.DataFrame(data)
-    df.to_csv('./training_log/ppo/lunar_lander.csv', index=False)
+    # data = {'episode': np.arange(len(score_history)), 'avg_reward': score_history}
+    # df = pd.DataFrame(data)
+    # df.to_csv('./training_log/ppo/lunar_lander.csv', index=False)
 

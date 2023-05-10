@@ -6,7 +6,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # lunar lander, cart pole
-    env = gym.make('CartPole-v1')
+    env = gym.make('LunarLander-v2')
     N = 20
     batch_size = 256
     n_epochs = 4
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         scores.append(score)
 
 
-    data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
-    df = pd.DataFrame(data)
-    df.to_csv('./testing_log/ppo/cart_pole.csv', index=False)
+    # data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
+    # df = pd.DataFrame(data)
+    # df.to_csv('./testing_log/ppo/cart_pole.csv', index=False)
 

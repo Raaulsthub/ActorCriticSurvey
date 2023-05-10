@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 if __name__ == '__main__':
-    env = gym.make('CartPole-v1')
+    env = gym.make('LunarLander-v2')
     agent = Agent(gamma=0.99, epsilon=0, batch_size=64, n_actions=env.action_space.n, eps_end=0,
                   input_dims=env.observation_space.shape, lr=0, max_mem_size=50000)
     agent.load_models()
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
 
 
-    data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
-    df = pd.DataFrame(data)
-    df.to_csv('./testing_log/dqn/cart_pole.csv', index=False)
+    # data = {'episode': np.arange(len(scores)), 'avg_reward': scores}
+    # df = pd.DataFrame(data)
+    # df.to_csv('./testing_log/dqn/cart_pole.csv', index=False)
     

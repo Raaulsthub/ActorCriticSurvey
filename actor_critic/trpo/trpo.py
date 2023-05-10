@@ -15,7 +15,7 @@ num_actions = env.action_space.n
 
 Rollout = namedtuple('Rollout', ['states', 'actions', 'rewards', 'next_states', ])
 
-def test(epochs=100, num_rollouts=10, render_frequency=0):
+def test(epochs=100, num_rollouts=10, render_frequency=1):
     load_checkpoint(actor, './lunar_lander/actor')
     load_checkpoint(critic, './lunar_lander/critic')
     global_rollout = 0
@@ -32,8 +32,8 @@ def test(epochs=100, num_rollouts=10, render_frequency=0):
             samples = []
 
             while not done:
-                # if render_frequency is not None and global_rollout % render_frequency == 0:
-                    # env.render()
+                if render_frequency is not None and global_rollout % render_frequency == 0:
+                    env.render()
 
                 with torch.no_grad():
                     action = get_action(state)
@@ -62,9 +62,9 @@ def test(epochs=100, num_rollouts=10, render_frequency=0):
         mean_total_rewards.append(mtr)
         print(f'E: {epoch}.\tMean total reward across {num_rollouts} rollouts: {mtr}')
     
-    data = {'episode': np.arange(len(mean_total_rewards)), 'avg_reward': mean_total_rewards}
-    df = pd.DataFrame(data)
-    df.to_csv('lunar_lander.csv', index=False)
+    # data = {'episode': np.arange(len(mean_total_rewards)), 'avg_reward': mean_total_rewards}
+    # df = pd.DataFrame(data)
+    # df.to_csv('lunar_lander.csv', index=False)
 
 
 
