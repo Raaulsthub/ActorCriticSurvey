@@ -35,6 +35,8 @@ if __name__ == '__main__':
             action, prob, val = agent.choose_action(observation)
             observation_, reward, done, info = env.step(action)
             n_steps += 1
+            if reward < 0:
+                reward *= 5
             score += reward
             agent.remember(observation, action, prob, val, reward, done)
             if n_steps % N == 0:

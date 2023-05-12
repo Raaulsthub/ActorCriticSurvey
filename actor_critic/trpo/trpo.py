@@ -94,6 +94,8 @@ def train(epochs=1000, num_rollouts=10, render_frequency=None):
                     action = get_action(state)
 
                 next_state, reward, done, _ = env.step(action)
+                if reward < 0:
+                    reward *= 5
 
                 # Collect samples
                 samples.append((state, action, reward, next_state))
@@ -295,5 +297,5 @@ def apply_update(grad_flattened):
 
 
 # Train our agent
-#train(epochs=1000, num_rollouts=10, render_frequency=1)
+# train(epochs=300, num_rollouts=10, render_frequency=1)
 test()
